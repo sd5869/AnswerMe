@@ -1,0 +1,20 @@
+<ion-view title="Answer to Life Universe and Everything" id="page4"s>
+    <ion-content padding="true" class="has-header">
+        <form name="form" class="list">
+            <label class="item item-input"> 
+                <span class="input-label" required>Enter Question</span>
+                <textarea id="ques"ng-model="question"></textarea>
+            </label>
+            <label class="item item-input"> 
+               <span class="input-label">Enter Code</span>
+                <textarea id="ans" ng-model="answer"></textarea>
+            </label>
+            <ion-toggle onclick="run(document.getElementById('ans').value,document.getElementById('ques').value)" toggle-class="toggle-positive" ng-checked="answerFlag" ng-model="answerFlag">Give me Answer</ion-toggle>
+        </form>
+        <h5>Answer:</h5>
+        <p ng-show="answerFlag" style="color:#000000;text-align:justify;" id="oa">{{answer}}</p>
+        <button href=" "  ng-click="question=answer=null;answerFlag=false;showAnswerFlag.value=false;" class="button button-full button-positive">
+            Clear
+        </button>
+    </ion-content>
+</ion-view>
